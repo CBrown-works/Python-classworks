@@ -1,6 +1,6 @@
 def secondLargestInt():
     print("Enter integer values seprated by a space: ")
-    userList = arr = list(map(int, input().split()))
+    userList = list(map(int, input().split()))
 
 
     max = userList[0]
