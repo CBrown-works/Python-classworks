@@ -1,12 +1,7 @@
 def secondLargestInt():
-    userList = []
-    length = int(input("enter size of list:" ))
+    print("Enter integer values seprated by a space: ")
+    userList = arr = list(map(int, input().split()))
 
-
-    for i in range(0,length):
-
-        uInput = int(input("Enter an Integer: "))
-        userList.append(uInput)
 
     max = userList[0]
     secMax = userList[0]
