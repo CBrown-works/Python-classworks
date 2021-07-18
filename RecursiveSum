@@ -1,0 +1,10 @@
+def RecSUm(intx):
+    #a Python recursion program thar gets the sum of a non-negative integer after taking input from user
+    if intx%10==intx:# if int x is the last digit 
+        
+        return intx
+    else:
+
+        
+        return intx % 10 + RecSUm(intx//10)# sperates the digit from the number untuil base case is reached then adds them together
+print(RecSUm(int(input("Enter a number:"))))#to assure user input is int
