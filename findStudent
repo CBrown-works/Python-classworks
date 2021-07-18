@@ -1,0 +1,34 @@
+import re
+def findStudent(fname):
+    #creates a student’s record in a tab delimited format then reads the student_record.tsv file and print the name of the student with maximum score.
+    file = open('student_record.tsv', "w")
+    file.write("Name        \tAge\tScore\n")# adding names and scores in delimited format
+    file.write("John Wright \t18\t63\n")
+    file.write("Mark Wright \t18\t95\n")
+    file.write("Lisa Smith  \t19\t72\n")
+    file.write("Jane Ann    \t23\t42\n")
+    file.write("Bruce Smith \t21\t75\n")
+    file.write("Jake Roger  \t22\t81\n")
+    file.write("John Wright \t18\t61\n")
+    file.write("Trish Smith \t22\t91\n")
+    file.write("Roger Laney \t21\t75\n")
+    file.write("William Mant \t19\t22\n")
+    
+    file.close()
+    file = open('student_record.tsv', "r")#opens file in read mode
+   
+    y = file.read()
+    print(y)
+    x =re.findall("[0-9][0-9]\n",y)#searches for all scores
+    
+    
+    
+
+
+    maxScore = str(max(x).replace("\n", ""))#finds highest score a d assigns to max score
+    lines = open(fname).read().splitlines()
+    for line in lines:
+        if str(maxScore) in line:
+            name = re.match(r'[A-z]*\s[A-z]*',line)#finds a name on the line that has the max score
+            print(name.group()+" has the highest score")#if a line in the file contains the name from the line
+findStudent('student_record.tsv')
