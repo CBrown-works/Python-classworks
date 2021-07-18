@@ -1,0 +1,17 @@
+def EndWithE(file):
+    "a function in Python that counts words in a text file that end with the alphabet e "
+    file = open(file)
+    
+    words = " ".join(file).split()# creates a list of all words from a file
+    eWords =[x for x in words if x[-1] =="e"]# creates a list of words from the words list that end with e
+    #print(eWords)
+
+
+    Freq = {}
+    for x in eWords: #checks to see if the e word has appeared before, if it has add 1 to its value in dictionary
+        if x not in Freq:
+            Freq[x] = 1
+        elif x in Freq:
+            Freq[x] = Freq[x] + 1
+    print("The words ending with e and their frequency are " + str(Freq))
+EndWithE('sample_data.txt')
