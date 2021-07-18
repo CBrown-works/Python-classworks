@@ -1,0 +1,179 @@
+import math 
+class Calculator:
+
+
+    def mul(self,inputNum,inputNum2):
+
+        mulNum= int(inputNum)*int(inputNum2)
+        print(inputNum + "*" + inputNum2 + "=" , end="")
+        return mulNum
+
+    def div(self,inputNum,inputNum2):
+        divNum = int(inputNum)/int(inputNum2)
+        print(inputNum + "/"+inputNum2 + "=" , end="")
+        return divNum
+    def add(self,inputNum,inputNum2):
+        addNum=int(inputNum)+int(inputNum2)
+        print(inputNum +"+" +inputNum2 +"=", end="")
+        return addNum
+    def sub(self,inputNum,inputNum2):
+        subNum=int(inputNum)-int(inputNum2)
+        print(inputNum + "-" + inputNum2 + "=" , end="")
+        return subNum
+    def exp(self,inputNum,inputNum2):
+        expNum = int(inputNum)**int(inputNum2)
+        print(inputNum + "^" + inputNum2 + "=" , end="")
+        return expNum
+    def mod(self,inputNum,inputNum2):
+        modNum = int(inputNum)%int(inputNum2)
+        print(inputNum + "%" + inputNum2 + "=" , end="")
+        return modNum
+    def sqr(self,inputNum):
+        sqrNum = int(inputNum)**.25
+        print("The square root of "+inputNum + " is" , end="")
+        return sqrNum
+    def fact(self,inputNum):
+        factNum =1
+        for x in range(1,int(inputNum)+1):
+            factNum*=x
+        print(inputNum+"!" +" is",end="")
+        return factNum
+    def sin(self,inputNum):
+
+        sinNum = math.sin(int(inputNum))
+        print("sin("+inputNum+")" +" is",end="")
+        return sinNum
+    def cos(self,inputNum):
+        cosNum = math.cos(int(inputNum))
+        print("cos("+inputNum+")" +" is",end="")
+        return cosNum
+
+
+
+
+
+
+
+
+
+
+
+myCal =Calculator()
+print("Welcome to your calculator")
+
+while(True ):
+
+
+        print("Select operation. \n 1.Add \n 2.Subtract \n 3.Multiply \n 4.Divide \n 5.Exponent \n 6.Modulo \n 7.Square Root \n 8.Factorial \n 9.sin \n 10.cos")
+        opInput = input("Enter choice(1/2/3/4/5/6/7/8/9/10):")
+        if opInput == "1":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.add(inputNum,inputNum2))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "2":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.sub(inputNum, inputNum2))
+
+            cont = input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "3":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.mul(inputNum,inputNum2))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+
+            else:
+                print("thank you")
+                break
+        if opInput == "4":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.div(inputNum,inputNum2))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "5":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.exp(inputNum,inputNum2))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "6":
+            inputNum = input("Enter the first number:")
+            inputNum2 = input("Enter the second number:")
+            print(myCal.mod(inputNum,inputNum2))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "7":
+            inputNum = input("Enter the first number:")
+
+            print(myCal.sqr(inputNum))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "8":
+            inputNum = input("Enter the first number:")
+
+            print(myCal.fact(inputNum))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "9":
+            inputNum = input("Enter the first number:")
+
+            print(myCal.sin(inputNum))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
+        if opInput == "8":
+            inputNum = input("Enter the first number:")
+
+            print(myCal.cos(inputNum))
+
+            cont =input("do you want to continue?(Yes or No)")
+            if cont.lower() == "yes":
+                continue
+            else:
+                print("thank you")
+                break
