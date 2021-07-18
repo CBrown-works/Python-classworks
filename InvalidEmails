@@ -1,0 +1,38 @@
+import re
+def InvalidEmails(fname):
+    #create Employee’s record in a tab delimited format , then reads the employee_record.tsv file and prints the names of the Employees with invalid emails. 
+    file = open(fname, "w")
+    # listx = ["Name\tAge\tScore\n", "John Wright \t18\t63\n", "Mark Wright \t18\t95\n", "Lisa Smith \t19\t72\n","Jane Ann \t23\t42\n", "Bruce Smith \t21\t75\n", "Jake Roger \t22\t81\n", "John Wright \t18\t61\n", "Trish Smith \t22\t91\n", "Roger Laney \t21\t75\n", "William Mant \t19\t22\n"]
+    file.write("Name        \tAge\tEmail\tDepartment\n")
+    file.write("John Wright \t18\tJwright@yahoo.com \tHuman Resources\n")# adds names ,email addresses and department in delimited format
+    file.write("Mark Wright \t18\tMWright@yahoo.com \tHuman Resources\n")
+    file.write("Lisa Smith  \t19\tLSmith@yahoo.com \tHuman Resources\n")
+    file.write("Jane Ann    \t23\t J@Ann@yahoo.com \tPublic Relations\n")#incorrectly formatted email address becuase of hastag and @
+    file.write("Bruce Smith \t21\tBSmith@yahoo.com\tSales\n")
+    file.write("Jake Roger  \t22\tJ#rog@yahoo.com \tHealthcare\n")#incorrectly formatted email address becuase of hash tag
+    file.write("John Wright \t18\tJohnWright@yahoo.com \tEducation \n")
+    file.write("Trish Smith \t22\tTSmi@#th@yahoo.com \tFood\n")#incorrectly formatted email address  becuase of hastag and @
+    file.write("Roger Laney \t21\tRlaney@yahoo.com \tManufacturing\n")
+    file.write("William Man \t19\tWMant@yahoo.com \tHealthcare\n")
+    
+    file.close()
+    file = open('employee_record.tsv', "r")
+    
+    y = file.read()
+    print(y)
+   
+
+    
+    lines = open(fname).read().splitlines()#list of lines in the file
+    isValid=[]
+
+    
+    for x in range(1,len(lines)):
+        ValidEmail = re.findall(r'\s[A-Za-z0-9.]+@[A-Za-z0-9]+\.[A-Za-z]+\s',lines[x])#searches for correctly formatted email address on the line 
+        if len(ValidEmail)==0:# if ValidEmail is empty the line does not have a valid email
+            name = re.match(r'[A-z]*\s[A-z]*',lines[x])#if a line does not contain a correctly formatted email the email address on the line must be incorrect
+            print(name.group()+"'s email is not formatted correctly")# prints the name of the person with incorrect email
+
+
+
+InvalidEmails('employee_record.tsv')
