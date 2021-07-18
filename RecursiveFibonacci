@@ -1,0 +1,15 @@
+def RecFibo(num):
+    #a Python program that solves the Fibonacci sequence using recursion after taking input from user
+    if num <= 1:
+
+        return num
+    else:
+
+        return RecFibo(num-1)+RecFibo(num-2)#F(n) = F(n-1) + F(n-2)
+
+num=int(input("Where do you want to stop Fibonacci series : "))
+for x in range(1,num+1):# used to print the sequence after finding solution recursively 
+    if x==num:#used to print last number without comma
+        print(RecFibo(x))
+    else:
+        print(RecFibo(x),end=",")# print each number with comma
