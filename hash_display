@@ -1,0 +1,13 @@
+Matter = open("Matter.txt","w")#creates a new file
+
+Matter.write("Welcome to Principles of Data Science")
+Matter.close()
+def hash_display(Matter):
+    "a function that prints words from a file with a # between each letter"
+    Matter = open("Matter.txt", "r")# opens the file in read mode
+    words = " ".join(Matter).split()# creates a list of all words from a file
+    listx = []
+    for x in words:
+        listx.append(x.replace("", "#")[1:])# adds a # between letters 
+    print(" ".join(listx) )
+hash_display(Matter)
