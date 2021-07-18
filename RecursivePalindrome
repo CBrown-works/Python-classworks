@@ -1,0 +1,18 @@
+def recPal(strin):
+    #a Python program to identify a palindrome word using recursion
+    if(len(strin)<2):# once you reach the innermost substring without breaking its a palindrome
+
+
+        return print("Your word is a palindrome word!")
+    else:
+        i = strin[0].lower()#grabs lowercase of first letter to compare regardless of case
+        j=strin[-1].lower()#grabs lowercase of last letter to compare regardless of case
+        if(i==j):# checks if they are the same
+            
+            recPal(strin[1:-1])# if i and j are the same string becomes a substring of itself for next call
+        else:
+
+            return print("Your word is not a palindrome")
+
+
+recPal(input("Enter a word : "))
