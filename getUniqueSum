@@ -1,0 +1,14 @@
+listx = [1,2,3,2]
+def getUniSum(listx):
+    #calculates sum of all unique elements in an array. 
+    uniList= []#stores unique values
+    for x in listx:
+        if x not in uniList:
+            uniList.append(x)# if the value is unique add to unilist
+        elif x in uniList:
+            uniList.remove(x)
+    if len(uniList)==0:#
+        return "There are no unique elements, so the sum is 0."
+    print("the unique elements are "+str(uniList)+" and their sum is ",end="")
+    return sum(uniList)
+print(getUniSum(listx))
