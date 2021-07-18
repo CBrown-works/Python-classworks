@@ -1,0 +1,13 @@
+def getFreq(file):
+    "a Python program that obtains the frequency of words from a given file. Using dictionary to obtain the frequency. "
+    file = open(file)
+    words = " ".join(file).split()# creates a list of all words from a file
+    Freq = {}
+    for x in words:#checks to see if the word has appeared before, if it has add 1 to its value in dictionary
+        if x not in Freq:
+            
+            Freq[x]=1
+        elif x in Freq:
+            Freq[x]=Freq[x]+1
+    print("The words and their frequency are "+str(Freq))
+getFreq('sample_data.txt')
